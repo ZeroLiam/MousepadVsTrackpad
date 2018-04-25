@@ -16,7 +16,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0"
   },
-  "description": "Mousepad vs Trackpad test... which one is better for the user?",
+  "description": "Mousepad vs Trackpad test... which one is better for the user? This project uses the One Page Template (https://github.com/BlackrockDigital/startbootstrap-one-page-wonder)",
   "author": "Liselot Ramirez (ZeroLiam)",
   "license": "MIT"
 }
