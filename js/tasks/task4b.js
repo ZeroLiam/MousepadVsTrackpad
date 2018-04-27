@@ -1,9 +1,9 @@
-var fs = require('fs');
 
 console.log("loaded task4b.js");
 var totalClicks = 0;
 var dblClicks = 0;
 var singleClicks = 0;
+
 
 //check if our div is present
   if($("#task_4b").length > 0){
@@ -26,6 +26,24 @@ function registerDblClick(evt){
     console.log("totalClicks: " + totalClicks);
     console.log("dblClicks: " + dblClicks);
     console.log("singleClicks: " + singleClicks);
+
+
+
+    var dt = [{
+      "taskId": "task4b",
+      "totalClicks": totalClicks,
+      "dblClicks": dblClicks,
+      "singleClicks": singleClicks
+    }];
+    $.ajax
+        ({
+            url: 'http://localhost:3000/components/save_json.php',
+            method: "POST",
+            dataType : 'json',
+            data: {'data' : JSON.stringify(dt)},
+            success: function (res) {console.log(res); },
+            failure: function(err) {console.log(err);}
+        });
   }
 }
 
