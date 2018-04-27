@@ -47,9 +47,10 @@
     <header class="masthead text-center text-white">
       <div class="masthead-content">
         <div class="container">
-          <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-          <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
-          <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
+          <h1 class="masthead-heading mb-0">Mouse vs Trackpad</h1>
+          <h2 class="masthead-subheading mb-0">The Ancient Battle of Peripherals</h2>
+          <h3 id="endMsg"></h3>
+          <button id="startTest" class="btn btn-primary btn-xl rounded-pill mt-5" onclick="createTasks()">Start</button>
         </div>
       </div>
       <div class="bg-circle-1 bg-circle"></div>
@@ -58,40 +59,63 @@
       <div class="bg-circle-4 bg-circle"></div>
     </header>
 
-    <section id="task1">
-    </section>
+    <div id="sessionA">
+      <h1>Task 1</h1>
+      <section id="task1">
+      </section>
 
-    <section id="task2">
-    </section>
+      <h1>Task 2</h1>
+      <section id="task2">
+      </section>
 
-    <section id="task3">
-    </section>
+      <h1>Task 3</h1>
+      <section id="task3">
+      </section>
 
-    <section id="task4">
-    </section>
+      <h1>Task 4</h1>
+      <section id="task4">
+      </section>
 
-    <section id="task5">
-    </section>
+      <h1>Task 5</h1>
+      <section id="task5">
+      </section>
+    </div>
 
-    <section id="task6">
-    </section>
+    <div id="minipagination">
+      <button id="nextSession" type="button" class="btn btn-primary btn-lg" onclick="loadNextSession()">Next Session</button>
+    </div>
 
-    <section id="task7">
-    </section>
+    <div id="sessionB">
+      <h1>Task 1</h1>
+      <section id="task6">
+      </section>
 
-    <section id="task8">
-    </section>
+      <h1>Task 2</h1>
+      <section id="task7">
+      </section>
 
-    <section id="task9">
-    </section>
+      <h1>Task 3</h1>
+      <section id="task8">
+      </section>
 
-    <section id="task10">
-    </section>
+      <h1>Task 4</h1>
+      <section id="task9">
+      </section>
+
+      <h1>Task 5</h1>
+      <section id="task10">
+      </section>
+    </div>
+
+    <div id="minipagination">
+      <button id="endSession" type="button" class="btn btn-primary btn-lg" onclick="endSession()">Finish Test</button>
+    </div>
 
     <!-- Footer -->
     <footer class="py-5 bg-black">
       <div class="container">
-        <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white small">Copyright &copy; Group 10 - Advanced HCI Methods Summer Semester 2018</p>
+        <p class="m-0 text-center text-white small">Bauhaus University Weimar</p>
       </div>
       <!-- /.container -->
     </footer>
