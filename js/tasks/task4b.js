@@ -1,4 +1,3 @@
-
 console.log("loaded task4b.js");
 var totalClicks = 0;
 var dblClicks = 0;
@@ -19,16 +18,15 @@ function registerDblClick(evt){
   var increase = 50;
   $(this).css("height", $(this).outerHeight() + increase + "px");
   $(this).css("width", $(this).outerWidth() + increase + "px");
-  totalClicks++;
 
   if($(this).outerHeight() >= 450){
     $(this).hide();
+    totalClicks += singleClicks + dblClicks;
     console.log("totalClicks: " + totalClicks);
     console.log("dblClicks: " + dblClicks);
     console.log("singleClicks: " + singleClicks);
 
-
-
+    totalClicks = dblClicks + singleClicks;
     var dt = [{
       "taskId": "task4b",
       "totalClicks": totalClicks,
@@ -48,6 +46,5 @@ function registerDblClick(evt){
 }
 
 function registerClick(evt){
-  totalClicks++;
   singleClicks++;
 }

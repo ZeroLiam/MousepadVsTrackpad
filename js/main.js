@@ -1,6 +1,14 @@
 console.log("main.js loaded");
 
 function getScripts(){
+  $.getScript( "brow/js/tasks/task4a.js" )
+    .done(function( script, textStatus ) {
+      console.log( "success: task4a.js" );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+      console.log( "fail: task4a.js" );
+  });
+
   $.getScript( "brow/js/tasks/task4b.js" )
     .done(function( script, textStatus ) {
       console.log( "success: task4b.js" );

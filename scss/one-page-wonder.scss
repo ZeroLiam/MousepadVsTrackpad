@@ -37,6 +37,31 @@ section{
 /*********************************
 TASKS!!!
 *********************************/
+.task-align-cc{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+/**
+TASK 4A
+**/
+.folders-group{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.folder-img{
+  width: 210px;
+  max-width: 210px;
+  height: auto;
+}
+
+.folder{
+  margin-right: 70px;
+  text-align: center;
+}
+
 /**
 TASK 4B
 **/
