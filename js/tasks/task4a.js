@@ -1,1 +1,2 @@
-console.log("load task 4a");
+"use strict";
+console.log("loaded task4a.js");

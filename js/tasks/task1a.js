@@ -1,1 +1,3 @@
-console.log("load task 1a");
+"use strict";
+var fs = require('fs');
+console.log("loaded task1a.js");

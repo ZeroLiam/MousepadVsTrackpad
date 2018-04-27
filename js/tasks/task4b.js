@@ -1,4 +1,7 @@
-console.log("load task 4b");
+"use strict";
+var fs = require('fs');
+
+console.log("loaded task4b.js");
 var totalClicks = 0;
 var dblClicks = 0;
 var singleClicks = 0;

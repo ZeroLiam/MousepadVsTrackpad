@@ -5,6 +5,12 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var pkg = require('./package.json');
 var browserSync = require('browser-sync').create();
+// Build Dependencies
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var glob = require('glob');
+var es = require('event-stream');
+var uglify = require('gulp-uglify');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -73,8 +79,38 @@ gulp.task('browserSync', function() {
   });
 });
 
+//browserify
+// Basic usage
+gulp.task('browserify:comp', function() {
+  return browserify('./js/tasks/task4b.js')
+        .bundle()
+        //Pass desired output filename to vinyl-source-stream
+        .pipe(source('./task4b.js'))
+        // Start piping stream to tasks!
+        .pipe(gulp.dest('./js/brow/'));
+});
+
+//ALL
+gulp.task('browserify:all', function(done) {
+    glob('./js/tasks/*.js', function(err, files) {
+        if(err) done(err);
+
+        var tasks = files.map(function(entry) {
+            return browserify({ entries: [entry] })
+                .bundle()
+                .pipe(source(entry))
+                // .pipe(rename({
+                //     extname: '.js'
+                // }))
+                .pipe(gulp.dest('./brow/'));
+            });
+        es.merge(tasks).on('end', done);
+    })
+});
+
 // Dev task
-gulp.task('dev', ['css', 'browserSync'], function() {
+gulp.task('dev', ['css', 'browserSync', 'browserify:all'], function() {
   gulp.watch('./scss/*.scss', ['css']);
   gulp.watch('./*.html', browserSync.reload);
+
 });
