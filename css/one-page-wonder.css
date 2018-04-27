@@ -177,3 +177,23 @@ section:last-of-type {
 #endMsg {
   margin-top: 30px;
 }
+
+/*********************************
+TASKS!!!
+*********************************/
+/**
+TASK 4B
+**/
+.p-5 .balloon-4b {
+  text-align: center;
+}
+
+.bg-circle-4b {
+  display: inline-block;
+  border-radius: 100%;
+  background: radial-gradient(#ee0979 0%, #ff6a00 100%);
+  width: 50px;
+  max-width: 450px;
+  height: 50px;
+  max-height: 450px;
+}
