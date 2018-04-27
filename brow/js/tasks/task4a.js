@@ -101,7 +101,6 @@ var guesses = [];
     $('.folder-group').hide();
     $("#selectedWord").hide();
     totalClicks = dblClicks + singleClicks;
-    console.log("totalClicks: " + totalClicks);
 
     console.log(res);
     console.log(rightFolders);

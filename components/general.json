@@ -1,3 +1,5 @@
 
 [{"taskId":"task4a","totalClicks":23,"dblClicks":5,"singleClicks":18,"guesses":"[false,false,true,false,true]","rightAnswers":"[\"blue\",\"dogs\",\"pie\",\"shoes\",\"flowers\"]","wrongAnswers":"[\"cars\",\"cows\",\"wallets\",\"door\",\"red\"]"}]
 [{"taskId":"task4a","totalClicks":18,"dblClicks":5,"singleClicks":13,"guesses":"[false,false,false,true,false]","rightAnswers":"[\"wallets\",\"red\",\"dogs\",\"flowers\",\"shoes\"]","wrongAnswers":"[\"pie\",\"blue\",\"cars\",\"cows\",\"door\"]"}]
+[{"taskId":"task4a","totalClicks":15,"dblClicks":5,"singleClicks":10,"guesses":"[true,true,true,true,true]","rightAnswers":"[\"pie\",\"dogs\",\"door\",\"wallets\",\"shoes\"]","wrongAnswers":"[\"cars\",\"cows\",\"red\",\"blue\",\"flowers\"]"}]
+[{"taskId":"task4b","totalClicks":33,"dblClicks":8,"singleClicks":25}]
