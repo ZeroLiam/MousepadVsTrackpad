@@ -43,6 +43,19 @@ TASKS!!!
   flex-direction: column;
 }
 /**
+TASK 3A
+ */
+#scrollable {
+  border: 1px solid #999;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  overflow: auto;
+}
+/**
 TASK 4A
 **/
 .folders-group{
