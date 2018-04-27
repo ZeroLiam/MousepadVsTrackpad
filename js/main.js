@@ -1,7 +1,9 @@
 console.log("main.js loaded");
 
 //hide all elements
-hideAllButtons();
+if(window.location.pathname =="/"){
+  hideAllButtons();
+}
 
 function hideAllButtons(){
   //Hide elements
