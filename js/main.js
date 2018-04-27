@@ -1,5 +1,15 @@
 console.log("main.js loaded");
 
+function getScripts(){
+  $.getScript( "brow/js/tasks/task4b.js" )
+    .done(function( script, textStatus ) {
+      console.log( "success: task4b.js" );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+      console.log( "fail: task4b.js" );
+  });
+}
+
 //hide all elements
 if(window.location.pathname =="/"){
   hideAllButtons();
@@ -54,6 +64,12 @@ function loadTasks(arr){
   for(var ind = 0; ind < arr.length; ind++){
     $("#task" + (ind + 1)).load("../components/" + arr[ind] + ".html #" + arr[ind]);
   }
+
+    window.setTimeout(function(){
+      // console.log($("#task_4b").length > 0);
+      getScripts();
+    },2000);
+
     $('#sessionA').show();
 }
 

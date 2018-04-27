@@ -1,4 +1,3 @@
-"use strict";
 var fs = require('fs');
 
 console.log("loaded task4b.js");
@@ -7,10 +6,10 @@ var dblClicks = 0;
 var singleClicks = 0;
 
 //check if our div is present
-if($("#task_4b").length > 0){
-  $("#balloon").on('dblclick', registerDblClick);
-  $("#balloon").on('click', registerClick);
-}
+  if($("#task_4b").length > 0){
+    $("#balloon").on('dblclick', registerDblClick);
+    $("#balloon").on('click', registerClick);
+  }
 
 function registerDblClick(evt){
   console.log($(this).outerHeight());
