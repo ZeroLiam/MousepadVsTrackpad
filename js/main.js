@@ -9,6 +9,14 @@ function getScripts(){
       console.log( "fail: task4a.js" );
   });
 
+  $.getScript( "brow/js/tasks/task3b.js" )
+    .done(function( script, textStatus ) {
+      console.log( "success: task3b.js" );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+      console.log( "fail: task3b.js" );
+  });
+
   $.getScript( "brow/js/tasks/task4b.js" )
     .done(function( script, textStatus ) {
       console.log( "success: task4b.js" );

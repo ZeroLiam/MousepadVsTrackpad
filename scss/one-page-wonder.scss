@@ -63,9 +63,11 @@ TASK 3B
   height: 35px;
   width: 90px;
 }
+
 #volumcontroller div{
   height:40px;
 }
+
 .volumecontrollerbar{
   border-left:1px solid #222;
   float:right;
@@ -75,9 +77,11 @@ TASK 3B
   border-top-left-radius: 3px;
   background-color: #4c4c4c;
   cursor:pointer;
-}.volumecontrollerbar:hover{
-   background-color:#bcbcbc !important;
- }
+}
+
+.volumecontrollerbar:hover{
+  background-color:#bcbcbc !important;
+}
 
 
 /**

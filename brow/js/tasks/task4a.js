@@ -15,46 +15,46 @@ var labels = [];
 var guesses = [];
 
 //check if our div is present
-  if($("#task_4a").length > 0){
+if($("#task_4a").length > 0){
     $("#folder_area_1").on('dblclick', registerDblClick);
     $("#folder_area_1").on('click', registerClick);
     $("#folder_area_2").on('dblclick', registerDblClick);
     $("#folder_area_2").on('click', registerClick);
 
     createFolders();
-  }
+}
 
-  //Shuffles and creates tasks
-  function createFolders(){
+//Shuffles and creates tasks
+function createFolders(){
 
     foldergroupA.sort(function() { return 0.5 - Math.random() });
     foldergroupB.sort(function() { return 0.5 - Math.random() });
 
     for(var i = 0; i <= 4; i++){
-      var choseSet = Math.floor((Math.random() * 2) + 1);
+        var choseSet = Math.floor((Math.random() * 2) + 1);
 
-      if(choseSet == 1){
-        rightFolders[i] = foldergroupA[i];
-        wrongFolders[i] = foldergroupB[i];
-      }else if(choseSet == 2){
-        rightFolders[i] = foldergroupB[i];
-        wrongFolders[i] = foldergroupA[i];
-      }
+        if(choseSet == 1){
+            rightFolders[i] = foldergroupA[i];
+            wrongFolders[i] = foldergroupB[i];
+        }else if(choseSet == 2){
+            rightFolders[i] = foldergroupB[i];
+            wrongFolders[i] = foldergroupA[i];
+        }
     }
-      console.log(rightFolders);
-      console.log(wrongFolders);
-      // randomizeLabels(rightFolders, wrongFolders);
-      updateLabels(rightFolders, wrongFolders);
-  }
+    console.log(rightFolders);
+    console.log(wrongFolders);
+    // randomizeLabels(rightFolders, wrongFolders);
+    updateLabels(rightFolders, wrongFolders);
+}
 
-  function randomizeLabels(right,wrong){
+function randomizeLabels(right,wrong){
     labels = right.concat(wrong);
     labels.sort(function() { return 0.5 - Math.random() });
 
     console.log(labels);
-  }
+}
 
-  function updateLabels(right,wrong){
+function updateLabels(right,wrong){
     var pos = Math.floor((Math.random() * 2) + 1);
     var rA = [right[start], wrong[start]];
     rA.sort(function() { return 0.5 - Math.random() });
@@ -68,13 +68,13 @@ var guesses = [];
     // console.log("rA");
     // console.log(rA);
 
-      $("#task_4a #folder_label_1").html("");
-      $("#task_4a #folder_label_1").html(rA[0]);
-      $("#task_4a #folder_label_2").html("");
-      $("#task_4a #folder_label_2").html(rA[1]);
-  }
+    $("#task_4a #folder_label_1").html("");
+    $("#task_4a #folder_label_1").html(rA[0]);
+    $("#task_4a #folder_label_2").html("");
+    $("#task_4a #folder_label_2").html(rA[1]);
+}
 
-  function registerDblClick(evt){
+function registerDblClick(evt){
     dblClicks++;
     var thislabel = $(this).next().html();
     console.log("thislabel: " + thislabel);
@@ -82,22 +82,22 @@ var guesses = [];
     console.log("xx: " + xx);
     console.log("rightFolders[start]: " + rightFolders[start]);
 
-      if(thislabel == rightFolders[start]){
+    if(thislabel == rightFolders[start]){
         guesses[start] = true;
-      }else{
+    }else{
         guesses[start] = false;
-      }
+    }
 
-      if(start == 4){
+    if(start == 4){
         finishTask(guesses);
-      }else{
+    }else{
         start++;
         updateLabels(rightFolders, wrongFolders);
-      }
+    }
 
-  }
+}
 
-  function finishTask(res){
+function finishTask(res){
     $('.folder-group').hide();
     $("#selectedWord").hide();
     totalClicks = dblClicks + singleClicks;
@@ -105,7 +105,7 @@ var guesses = [];
     console.log(res);
     console.log(rightFolders);
 
-      var dt = [{
+    var dt = [{
         "taskId": "task4a",
         "totalClicks": totalClicks,
         "dblClicks": dblClicks,
@@ -113,21 +113,21 @@ var guesses = [];
         "guesses": JSON.stringify(res),
         "rightAnswers": JSON.stringify(rightFolders),
         "wrongAnswers": JSON.stringify(wrongFolders)
-      }];
+    }];
 
-      $.ajax
-          ({
-              url: 'http://localhost:3000/components/save_json.php',
-              method: "POST",
-              dataType : 'json',
-              data: {'data' : JSON.stringify(dt)},
-              success: function (res) {console.log(res); },
-              failure: function(err) {console.log(err);}
-          });
-  }
+    $.ajax
+    ({
+        url: 'http://localhost:3000/components/save_json.php',
+        method: "POST",
+        dataType : 'json',
+        data: {'data' : JSON.stringify(dt)},
+        success: function (res) {console.log(res); },
+        failure: function(err) {console.log(err);}
+    });
+}
 
-  function registerClick(evt){
+function registerClick(evt){
     singleClicks++;
-  }
+}
 
 },{}]},{},[1]);
