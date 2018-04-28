@@ -36,23 +36,6 @@ function getScripts(){
   });
 
   //TASKS #2
-  $.getScript( "brow/js/tasks/task3a.js" )
-    .done(function( script, textStatus ) {
-      console.log( "success: task3a.js" );
-    })
-    .fail(function( jqxhr, settings, exception ) {
-      console.log( "fail: task3a.js" );
-  });
-
-  $.getScript( "brow/js/tasks/task3b.js" )
-    .done(function( script, textStatus ) {
-      console.log( "success: task3b.js" );
-    })
-    .fail(function( jqxhr, settings, exception ) {
-      console.log( "fail: task3b.js" );
-  });
-
-  //TASKS #2
   $.getScript( "brow/js/tasks/task4a.js" )
     .done(function( script, textStatus ) {
       console.log( "success: task4a.js" );
@@ -85,8 +68,8 @@ function hideAllButtons(){
 
 //Shuffles and creates tasks
 function createTasks(evt){
-  var setA = ["1a", "2a", "3a", "4a", "5a"];
-  var setB = ["1b", "2b", "3b", "4b", "5b"];
+  var setA = ["1a", "2a", "4a"];
+  var setB = ["1b", "2b", "4b"];
   var randomSet = [];
 
   setA.sort(function() { return 0.5 - Math.random() });
