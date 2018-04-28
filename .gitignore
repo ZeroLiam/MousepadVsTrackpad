@@ -1,1 +1,6 @@
 package-lock.json
+brow/js
+css/*
+node_modules/*
+vendor/*
+.idea/*
