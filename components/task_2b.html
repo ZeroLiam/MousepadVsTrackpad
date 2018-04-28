@@ -22,24 +22,37 @@
     <section>
       <div class="container" id="task_2b">
         <div class="row align-items-center">
-          <div class="col-lg-6 order-lg-1">
+          <div class="col-lg-6">
             <div class="p-5">
               <h2 class="display-4">Going in Circles</h2>
-              <p>For this task, you are required to go in a circle for three times Counter-Clockwise (Left to Right in a circular motion). Stay in the shaded region as you go around.</p>
+              <p>For this task, you are required to go in a circle for three times Clockwise (Right to Left in a circular motion). Stay in the shaded region as you go around.</p>
               <p>Please begin at your own leisure.</p>
             </div>
           </div>
             <div class="col-lg-6 order-lg-2">
-              <!-- <div class="p-5">
-                <img class="img-fluid rounded-circle" src="img/01.jpg" alt="">
-              </div> -->
+              <div id="counterclockwise">
+                <div id="dirCCW">
+                  <h3 class="startPoint">
+                    Start Here: <i class="fas fa-arrow-right stp"></i>
+                  </h3>
+                </div>
+                <div id="circle-area2" class="circleOut">
+                  <div id="ccw-counter" class="circleIn">
+                    <h3 id="ccwloops"></h3>
+                    <i class="fas fa-undo fa-spin-reverse fa-3x"></i>
+                  </div>
+                </div>
+                <div id="ccwStpoint"></div>
+                <h1 id="ccwdone">DONE!</h1>
+              </div>
             </div>
         </div>
       </div>
     </section>
 
     <!-- Load THIS TASK specific javascript -->
-    <script src="../js/tasks/task2b.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../brow/js/tasks/task2b.js"></script>
   </body>
   </body>
 </html>

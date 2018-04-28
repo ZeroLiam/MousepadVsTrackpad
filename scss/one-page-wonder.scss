@@ -7,6 +7,9 @@
 @import "navbar.scss";
 @import "masthead.scss";
 @import "bootstrap-overrides.scss";
+// FontAwesome
+@import "scss/fontawesome.scss";
+@import "scss/fa-solid.scss";
 
 // Custom CSS
 section{
@@ -49,7 +52,7 @@ TASK 1A and 1B
   z-index: 5;
 }
 
-#square-ring, #square-ring2{
+#square-ring, #square-ring2, #clockwise, #counterclockwise{
     position: relative;
     border: 3px solid #444444;
     width: 650px;
@@ -74,6 +77,64 @@ TASK 1A and 1B
   border: 1px solid #ee0979;
   background: radial-gradient($primary 0%, $secondary 100%);
   position: absolute;
+  color: #ffffff;
+}
+
+/**
+TASK 2A and 2B
+**/
+.circleOut {
+  top: 15%;
+  left:36%;
+  background: radial-gradient($primary 0%, $secondary 100%);
+  width:50%;
+  height:70%;
+  position:absolute;
+  border-radius: 50%;
+}
+
+.circleIn {
+  background-color:#ffffff;
+  top: 15%;
+  left:15%;
+  width:70%;
+  height:70%;
+  position: absolute;
+  // border:1px solid black;
+  border-radius: 50%;
+  box-shadow: 0px 0px 7px 1px #9e9e9e;
+  color: #333;
+
+  h3{
+    line-height: 220px;
+    font-size: 105px;
+    display: inline-flex;
+    margin-left: 10px;
+  }
+}
+
+#dirCW, #dirCCW{
+  position: absolute;
+  top: 230px;
+  left: 54px;
+  margin-right: 10px;
+  color: #878787;
+
+  .stp{
+    margin-left: 10px;
+  }
+}
+
+#cwStpoint, #ccwStpoint{
+  background-color: #fff;
+  width: 58px;
+  height: 13px;
+  position: absolute;
+  top: 237px;
+  left: 232px;
+}
+
+#ccwdone, #cwdone{
   color: #ffffff;
 }
 
@@ -113,4 +174,10 @@ TASK 4B
   max-width: 450px;
   height: 50px;
   max-height: 450px;
+}
+
+// SPIN
+.fa-spin-reverse {
+    -webkit-animation: fa-spin 2s infinite linear reverse;
+            animation: fa-spin 2s infinite linear reverse;
 }

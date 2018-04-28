@@ -1,6 +1,7 @@
 console.log("main.js loaded");
 
 function getScripts(){
+  //TASKS #1
   $.getScript( "brow/js/tasks/task1a.js" )
     .done(function( script, textStatus ) {
       console.log( "success: task1a.js" );
@@ -17,21 +18,39 @@ function getScripts(){
       console.log( "fail: task1b.js" );
   });
 
-    $.getScript( "brow/js/tasks/task4a.js" )
-      .done(function( script, textStatus ) {
-        console.log( "success: task4a.js" );
-      })
-      .fail(function( jqxhr, settings, exception ) {
-        console.log( "fail: task4a.js" );
-    });
+  //TASKS #2
+  $.getScript( "brow/js/tasks/task2a.js" )
+    .done(function( script, textStatus ) {
+      console.log( "success: task2a.js" );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+      console.log( "fail: task2a.js" );
+  });
 
-    $.getScript( "brow/js/tasks/task4b.js" )
-      .done(function( script, textStatus ) {
-        console.log( "success: task4b.js" );
-      })
-      .fail(function( jqxhr, settings, exception ) {
-        console.log( "fail: task4b.js" );
-    });
+  $.getScript( "brow/js/tasks/task2b.js" )
+    .done(function( script, textStatus ) {
+      console.log( "success: task2b.js" );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+      console.log( "fail: task2b.js" );
+  });
+
+  //TASKS #2
+  $.getScript( "brow/js/tasks/task4a.js" )
+    .done(function( script, textStatus ) {
+      console.log( "success: task4a.js" );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+      console.log( "fail: task4a.js" );
+  });
+
+  $.getScript( "brow/js/tasks/task4b.js" )
+    .done(function( script, textStatus ) {
+      console.log( "success: task4b.js" );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+      console.log( "fail: task4b.js" );
+  });
 }
 
 //hide all elements
