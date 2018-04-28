@@ -2,6 +2,8 @@ console.log("loaded task4b.js");
 var totalClicks = 0;
 var dblClicks = 0;
 var singleClicks = 0;
+var timerMeasure = 0;
+var tim;
 
 
 //check if our div is present
@@ -15,6 +17,10 @@ function registerDblClick(evt){
   console.log($(this).outerWidth());
 
   dblClicks++;
+  if(dblClicks == 1){
+      tim = setInterval(function(){ runTimer(10) }, 10);
+  }
+
   var increase = 50;
   $(this).css("height", $(this).outerHeight() + increase + "px");
   $(this).css("width", $(this).outerWidth() + increase + "px");
@@ -22,17 +28,22 @@ function registerDblClick(evt){
   if($(this).outerHeight() >= 450){
     $(this).hide();
     totalClicks += singleClicks + dblClicks;
+    console.log("time completed: " + timerMeasure);
+    clearInterval(tim);
+
     console.log("totalClicks: " + totalClicks);
     console.log("dblClicks: " + dblClicks);
     console.log("singleClicks: " + singleClicks);
 
     totalClicks = dblClicks + singleClicks;
-    var dt = [{
+    var dt = {
       "taskId": "task4b",
       "totalClicks": totalClicks,
       "dblClicks": dblClicks,
-      "singleClicks": singleClicks
-    }];
+      "singleClicks": singleClicks,
+      "time_completed": timerMeasure
+    };
+    
     $.ajax
         ({
             url: 'http://localhost:3000/components/save_json.php',
@@ -47,4 +58,8 @@ function registerDblClick(evt){
 
 function registerClick(evt){
   singleClicks++;
+}
+
+function runTimer(val){
+  timerMeasure += val;
 }

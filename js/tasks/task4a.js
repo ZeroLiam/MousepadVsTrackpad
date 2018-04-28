@@ -5,7 +5,8 @@ var dblClicks = 0;
 var singleClicks = 0;
 var start = 0;
 var gindex = 0;
-var xx = 0;
+var timerMeasure = 0;
+var tim;
 var foldergroupA = ["cars", "cows", "red", "wallets", "shoes"];
 var foldergroupB = ["dogs", "pie", "blue", "door", "flowers"];
 var rightFolders= [];
@@ -42,7 +43,7 @@ var guesses = [];
     }
       console.log(rightFolders);
       console.log(wrongFolders);
-      // randomizeLabels(rightFolders, wrongFolders);
+      randomizeLabels(rightFolders, wrongFolders);
       updateLabels(rightFolders, wrongFolders);
   }
 
@@ -59,13 +60,6 @@ var guesses = [];
     rA.sort(function() { return 0.5 - Math.random() });
     $("#selectedWord").html("");
     $("#selectedWord").html(right[start]);
-    //
-    // console.log("right");
-    // console.log(right);
-    // console.log("wrong");
-    // console.log(wrong);
-    // console.log("rA");
-    // console.log(rA);
 
       $("#task_4a #folder_label_1").html("");
       $("#task_4a #folder_label_1").html(rA[0]);
@@ -75,10 +69,13 @@ var guesses = [];
 
   function registerDblClick(evt){
     dblClicks++;
+
+    if(dblClicks == 1){
+        tim = setInterval(function(){ runTimer(10) }, 10);
+    }
     var thislabel = $(this).next().html();
     console.log("thislabel: " + thislabel);
     console.log("start: " + start);
-    console.log("xx: " + xx);
     console.log("rightFolders[start]: " + rightFolders[start]);
 
       if(thislabel == rightFolders[start]){
@@ -97,6 +94,8 @@ var guesses = [];
   }
 
   function finishTask(res){
+    clearInterval(tim);
+    console.log("time completed: " + timerMeasure);
     $('.folder-group').hide();
     $("#selectedWord").hide();
     totalClicks = dblClicks + singleClicks;
@@ -104,15 +103,16 @@ var guesses = [];
     console.log(res);
     console.log(rightFolders);
 
-      var dt = [{
+      var dt = {
         "taskId": "task4a",
         "totalClicks": totalClicks,
         "dblClicks": dblClicks,
         "singleClicks": singleClicks,
-        "guesses": JSON.stringify(res),
-        "rightAnswers": JSON.stringify(rightFolders),
-        "wrongAnswers": JSON.stringify(wrongFolders)
-      }];
+        "time_completed": timerMeasure,
+        "guesses": res,
+        "rightAnswers": rightFolders,
+        "wrongAnswers": wrongFolders
+      };
 
       $.ajax
           ({
@@ -127,4 +127,8 @@ var guesses = [];
 
   function registerClick(evt){
     singleClicks++;
+  }
+
+  function runTimer(val){
+    timerMeasure += val;
   }

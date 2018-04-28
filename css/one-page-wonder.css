@@ -188,6 +188,41 @@ TASKS!!!
 }
 
 /**
+TASK 1A and 1B
+**/
+#sq1 {
+  z-index: 5;
+}
+
+#square-ring, #square-ring2 {
+  position: relative;
+  border: 3px solid #444444;
+  width: 650px;
+  height: 450px;
+  min-width: 450px;
+  min-height: 250px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#square-ring h1, #square-ring2 h1 {
+  line-height: 440px;
+}
+
+.sqclass {
+  width: 100px;
+  height: 70px;
+  line-height: 50px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ee0979;
+  background: radial-gradient(#ee0979 0%, #ff6a00 100%);
+  position: absolute;
+  color: #ffffff;
+}
+
+/**
 TASK 4A
 **/
 .folders-group {
