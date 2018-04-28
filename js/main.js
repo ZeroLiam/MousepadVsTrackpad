@@ -36,6 +36,23 @@ function getScripts(){
   });
 
   //TASKS #2
+  $.getScript( "brow/js/tasks/task3a.js" )
+    .done(function( script, textStatus ) {
+      console.log( "success: task3a.js" );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+      console.log( "fail: task3a.js" );
+  });
+
+  $.getScript( "brow/js/tasks/task3b.js" )
+    .done(function( script, textStatus ) {
+      console.log( "success: task3b.js" );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+      console.log( "fail: task3b.js" );
+  });
+
+  //TASKS #2
   $.getScript( "brow/js/tasks/task4a.js" )
     .done(function( script, textStatus ) {
       console.log( "success: task4a.js" );
